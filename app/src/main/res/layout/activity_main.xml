@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.cep.cursoandroid.calculadora2016.MainActivity">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0"
+        android:id="@+id/tvVisor"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#e7e4e4"
+        android:textAlignment="textEnd"
+        android:textSize="50dp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tvVisor">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                style="@style/stlboton"
+                android:text="7"
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonNumerico" />
+
+            <Button
+                style="@style/stlboton"
+                android:text="8"
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonNumerico" />
+
+            <Button
+                style="@style/stlboton"
+                android:text="9"
+                android:id="@+id/button10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonNumerico" />
+
+            <Button
+                style="@style/stlboton.Operadores"
+                android:text="+"
+                android:id="@+id/button11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonOperador" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                style="@style/stlboton"
+                android:text="4"
+                android:id="@+id/bt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonNumerico" />
+
+            <Button
+                style="@style/stlboton"
+                android:text="5"
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonNumerico" />
+
+            <Button
+                style="@style/stlboton"
+                android:text="6"
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonNumerico" />
+
+            <Button
+                style="@style/stlboton.Operadores"
+                android:text="-"
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonOperador" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="1"
+                android:id="@+id/bt1"
+                style="@style/stlboton"
+                android:onClick="botonNumerico" />
+
+            <Button
+                style="@style/stlboton"
+                android:text="2"
+                android:id="@+id/bt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonNumerico" />
+
+            <Button
+                style="@style/stlboton"
+                android:text="3"
+                android:id="@+id/bt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonNumerico" />
+
+            <Button
+                style="@style/stlboton.Operadores"
+                android:text="/"
+                android:id="@+id/btMas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonOperador" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                style="@style/stlboton.borrado"
+                android:text="C"
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonBorrado" />
+
+            <Button
+                style="@style/stlboton"
+                android:text="0"
+                android:id="@+id/bt0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonNumerico" />
+
+            <Button
+                style="@style/stlboton.borrado"
+                android:text="="
+                android:id="@+id/btIgual"
+                android:background="#e3c5c5"
+                android:onClick="botonIgual" />
+
+            <Button
+                style="@style/stlboton.Operadores"
+                android:text="X"
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="botonOperador" />
+        </TableRow>
+
+    </TableLayout>
+</RelativeLayout>
