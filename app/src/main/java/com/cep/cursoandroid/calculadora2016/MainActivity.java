@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void operar() {
-        switch (charBoton) {
+        switch (charBoton) { 
             case ('+'):
                 res += resultadoDisplay();
                 break;
