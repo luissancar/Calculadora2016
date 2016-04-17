@@ -45,9 +45,11 @@ public class MainActivity extends AppCompatActivity {
         operar();
 
 
-
+        String resultado=new Double(res).toString();
+        if (resultado.length()>13)
+            resultado="Desbordamiento";
         TextView tvDisplay=(TextView) findViewById(R.id.tvVisor);
-        tvDisplay.setText(new Double(res).toString());
+        tvDisplay.setText(resultado);
 
         res=0.0;
         //resultadoDisplay();
@@ -103,11 +105,14 @@ public class MainActivity extends AppCompatActivity {
     }
     public void botonNumerico(View v)
     {
+
+        TextView tvDisplay=(TextView) findViewById(R.id.tvVisor);
+        String strDisplay=tvDisplay.getText().toString();
+        if (strDisplay.length()>12 && !cambiarDisplay)
+            return;
         Button boton =(Button) v;// saber el boton: su ID  getID()
         // saber el texto boton  getText()
         String strBoton=boton.getText().toString();
-        TextView tvDisplay=(TextView) findViewById(R.id.tvVisor);
-        String strDisplay=tvDisplay.getText().toString();
         // recuperar texto visor
         if (cambiarDisplay) {
             strDisplay = strBoton;
