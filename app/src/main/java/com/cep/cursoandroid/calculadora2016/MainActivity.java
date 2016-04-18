@@ -124,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
         String strDisplay=tvDisplay.getText().toString();
         if (strDisplay.length()>12 && !cambiarDisplay)
             return;
+        if (Double.valueOf(strDisplay)==0 && operacion==3)
+            botonIgual(v);
         Button boton =(Button) v;// saber el boton: su ID  getID()
         // saber el texto boton  getText()
         String strBoton=boton.getText().toString();
