@@ -93,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button boton =(Button) v;// saber el boton: su ID  getID()
         charBoton=boton.getText().charAt(0);
+        if (cambiarDisplay) {
+            return;
+        }
         cambiarDisplay=true;
         if (priOpe) {
             priOpe = false;
@@ -124,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         String strDisplay=tvDisplay.getText().toString();
         if (strDisplay.length()>12 && !cambiarDisplay)
             return;
-        if (Double.valueOf(strDisplay)==0 && operacion==3)
+        if (strDisplay.equals("division por 0"))
             botonIgual(v);
         Button boton =(Button) v;// saber el boton: su ID  getID()
         // saber el texto boton  getText()
