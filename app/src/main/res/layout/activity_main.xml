@@ -161,7 +161,7 @@
                 style="@style/stlboton.borrado"
                 android:text="="
                 android:id="@+id/btIgual"
-                android:background="#e3c5c5"
+                android:background="#32da1f"
                 android:onClick="botonIgual" />
 
             <Button
