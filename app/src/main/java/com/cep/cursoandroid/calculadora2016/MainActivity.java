@@ -1,5 +1,6 @@
 package com.cep.cursoandroid.calculadora2016;
 
+import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     char operacion='0';  // 0 ninguna, 1 +, 2 -,3 / y 4 *
-    boolean cambiarDisplay=true, priOpe=true;
+    boolean cambiarDisplay=true, priOpe=true,divCero=false;
 
     double res=0;
     char charBoton;
@@ -35,7 +36,18 @@ public class MainActivity extends AppCompatActivity {
                 res *= resultadoDisplay();
                 break;
             case ('/'):
-                res /= resultadoDisplay();
+                if (resultadoDisplay()!=0) {
+                    res /= resultadoDisplay();
+                }
+                else
+                {
+                    cambiarDisplay=true;
+                    priOpe=true;
+                    res=0;
+                    TextView tvDisplay=(TextView) findViewById(R.id.tvVisor);
+                    tvDisplay.setText("division por 0"); //
+                    divCero=true;
+                }
                 break;
         }
     }
@@ -43,18 +55,19 @@ public class MainActivity extends AppCompatActivity {
     public void botonIgual(View v)
     {
         operar();
+        if (!divCero) {
+            String resultado = new Double(res).toString();
+            if (resultado.length() > 13)
+                resultado = "Desbordamiento";
+            TextView tvDisplay = (TextView) findViewById(R.id.tvVisor);
+            tvDisplay.setText(resultado);
+        }
 
-
-        String resultado=new Double(res).toString();
-        if (resultado.length()>13)
-            resultado="Desbordamiento";
-        TextView tvDisplay=(TextView) findViewById(R.id.tvVisor);
-        tvDisplay.setText(resultado);
-
-        res=0.0;
+        res=0;
         //resultadoDisplay();
         cambiarDisplay=true;
         priOpe=true;
+        divCero=false;
 
 
 
@@ -72,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         tvDisplay.setText("0"); //
         cambiarDisplay=true;
         priOpe=true;
+        divCero=false;
     }
 
     public void botonOperador(View v)

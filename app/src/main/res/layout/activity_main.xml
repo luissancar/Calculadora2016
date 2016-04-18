@@ -13,7 +13,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="0"
+        android:text="@string/div0"
         android:id="@+id/tvVisor"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

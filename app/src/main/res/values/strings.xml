@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Calculadora 2016</string>
+    <string name="div0">División por 0</string>
 </resources>

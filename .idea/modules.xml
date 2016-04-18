@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Calculadora2016.iml" filepath="$PROJECT_DIR$/Calculadora2016.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Calculadora201601.iml" filepath="$PROJECT_DIR$/Calculadora201601.iml" />
       <module fileurl="file://$PROJECT_DIR$/Calculadora2016v1-fc30e79229fc9b6d0b7fc2d3d10ab3c6ba3acd7e.iml" filepath="$PROJECT_DIR$/Calculadora2016v1-fc30e79229fc9b6d0b7fc2d3d10ab3c6ba3acd7e.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
