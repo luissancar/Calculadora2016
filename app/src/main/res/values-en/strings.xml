@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Calculator 2016</string>
+    <string name="app_name">Calculator</string>
     <string name="div0">Division by 0</string>
 </resources>
