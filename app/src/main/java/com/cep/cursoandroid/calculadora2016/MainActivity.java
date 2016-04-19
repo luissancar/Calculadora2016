@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     char operacion='0';  // 0 ninguna, 1 +, 2 -,3 / y 4 *
-    boolean cambiarDisplay=true, priOpe=true,divCero=false;
+    boolean cambiarDisplay=true, priOpe=true,divCero=false,division=false;
 
     double res=0;
     char charBoton;
@@ -24,7 +24,17 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void operar() {
+    public void operar(View v) {
+        if (resultadoDisplay()==0 && division)
+        {
+            inicializar(v);
+            TextView tvDisplay=(TextView) findViewById(R.id.tvVisor);
+            String strdiv0 = getResources().getString(R.string.div0);
+            tvDisplay.setText(strdiv0);
+            divCero=true;
+            return;
+        }
+        division=false;
         switch (charBoton) {
             case ('+'):
                 res += resultadoDisplay();
@@ -36,16 +46,17 @@ public class MainActivity extends AppCompatActivity {
                 res *= resultadoDisplay();
                 break;
             case ('/'):
+                division=true;
                 if (resultadoDisplay()!=0) {
                     res /= resultadoDisplay();
                 }
                 else
                 {
-                    cambiarDisplay=true;
-                    priOpe=true;
-                    res=0;
+                    inicializar(v);
                     TextView tvDisplay=(TextView) findViewById(R.id.tvVisor);
-                    tvDisplay.setText("division por 0"); //
+                    //tvDisplay.setText("division por 0"); //
+                    String strdiv0 = getResources().getString(R.string.div0);
+                    tvDisplay.setText(strdiv0);
                     divCero=true;
                 }
                 break;
@@ -54,38 +65,45 @@ public class MainActivity extends AppCompatActivity {
 
     public void botonIgual(View v)
     {
-        operar();
+        operar(v);
         if (!divCero) {
-            String resultado = new Double(res).toString();
+            String resultado = Double.toString(res);
             if (resultado.length() > 13)
                 resultado = "Desbordamiento";
             TextView tvDisplay = (TextView) findViewById(R.id.tvVisor);
             tvDisplay.setText(resultado);
         }
+        inicializar(v);
+    }
 
+    public void botonesEnabled(View v, boolean valor)
+    {
+        Button btmas=(Button) findViewById(R.id.btMas);
+        Button btmenos=(Button) findViewById(R.id.btMenos);
+        Button btdiv=(Button) findViewById(R.id.btDiv);
+        Button btpor=(Button) findViewById(R.id.btPor);
+        Button btigual=(Button) findViewById(R.id.btIgual);
+        btmas.setEnabled(valor);
+        btmenos.setEnabled(valor);
+        btdiv.setEnabled(valor);
+        btpor.setEnabled(valor);
+        btigual.setEnabled(valor);
+
+    }
+    public void inicializar(View v)
+    {
+        botonesEnabled(v, false);
         res=0;
-        //resultadoDisplay();
         cambiarDisplay=true;
         priOpe=true;
         divCero=false;
-
-
-
-
-
-
-
     }
-
 
     public void botonBorrado(View v)
     {
         TextView tvDisplay=(TextView) findViewById(R.id.tvVisor);
-        res=0;
         tvDisplay.setText("0"); //
-        cambiarDisplay=true;
-        priOpe=true;
-        divCero=false;
+        inicializar(v);
     }
 
     public void botonOperador(View v)
@@ -102,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             res = resultadoDisplay();
         }
         else
-            operar();
+            operar(v);
         //res=resultadoDisplay();
                 //TextView tvDisplay=(TextView) findViewById(R.id.tvVisor);
                 //tvDisplay.setText(new Character(charBoton).toString());
@@ -127,8 +145,8 @@ public class MainActivity extends AppCompatActivity {
         String strDisplay=tvDisplay.getText().toString();
         if (strDisplay.length()>12 && !cambiarDisplay)
             return;
-        if (strDisplay.equals("division por 0"))
-            botonIgual(v);
+       // if (strDisplay.equals("division por 0"))
+         //   botonIgual(v);
         Button boton =(Button) v;// saber el boton: su ID  getID()
         // saber el texto boton  getText()
         String strBoton=boton.getText().toString();
@@ -143,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         // concatenar strVisort + strBoton
         tvDisplay.setText(strDisplay);
         // Guardar nuevo texto en el visor  setText(
+        botonesEnabled(v,true);
 
     }
 }

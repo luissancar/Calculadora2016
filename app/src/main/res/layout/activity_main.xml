@@ -58,10 +58,11 @@
             <Button
                 style="@style/stlboton.Operadores"
                 android:text="+"
-                android:id="@+id/button11"
+                android:id="@+id/btMas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="botonOperador" />
+                android:onClick="botonOperador"
+                android:enabled="false" />
         </TableRow>
 
         <TableRow
@@ -95,10 +96,11 @@
             <Button
                 style="@style/stlboton.Operadores"
                 android:text="-"
-                android:id="@+id/button4"
+                android:id="@+id/btMenos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="botonOperador" />
+                android:onClick="botonOperador"
+                android:enabled="false" />
         </TableRow>
 
         <TableRow
@@ -130,10 +132,11 @@
             <Button
                 style="@style/stlboton.Operadores"
                 android:text="/"
-                android:id="@+id/btMas"
+                android:id="@+id/btDiv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="botonOperador" />
+                android:onClick="botonOperador"
+                android:enabled="false" />
 
         </TableRow>
 
@@ -162,15 +165,17 @@
                 android:text="="
                 android:id="@+id/btIgual"
                 android:background="#32da1f"
-                android:onClick="botonIgual" />
+                android:onClick="botonIgual"
+                android:enabled="false" />
 
             <Button
                 style="@style/stlboton.Operadores"
                 android:text="X"
-                android:id="@+id/button8"
+                android:id="@+id/btPor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="botonOperador" />
+                android:onClick="botonOperador"
+                android:enabled="false" />
         </TableRow>
 
     </TableLayout>
